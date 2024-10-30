@@ -3,7 +3,7 @@ import json
 # ზემოთ შემოვიტანეთ აუცილებელი მოდულები
 
 # შესაქმნელი ფაილის მისამართი:
-file_path = "Lesson_12/chess_data/players.json"
+file_path = "[12] Lesson_12/chess_data/players.json"
 
 # განვსაზღვროთ 'შემქმნელი ფუნქცია':
 
@@ -41,11 +41,11 @@ def update_file(filepath, data_dict):
         json.dump(chess_players, f,  indent=4)
 
 
-create_file('chess_data', 'players.json')
+create_file('[12] Lesson_12/chess_data', 'players.json')
 
 # ფაილის კონტენტის წაკითხვა
 print("პირველი წაკითხვის შედეგი - სიცარიელე")
-print(read_file('Lesson_12/chess_data/players.json'))
+print(read_file('[12] Lesson_12/chess_data/players.json'))
 
 
 chess_players = [
@@ -73,7 +73,7 @@ for player in chess_players:
 
 # ფაილის შიგთავსის წაკითხვა
 print("ფაილის მე-2 წაკითხვა")
-print(read_file('Lesson_12/chess_data/players.json'))
+print(read_file('[12] Lesson_12/chess_data/players.json'))
 
 # შევსებული ფაილის განახლება, ბოლო ორი ლექსიკონის დამატება
 for player in players_to_add[:2]:  # მხოლოდ 2 ლექსიკონის დამატება
@@ -81,4 +81,4 @@ for player in players_to_add[:2]:  # მხოლოდ 2 ლექსიკო�
 
 # ფაილის კონტენტის წაკითხვა
 print("საბოლოო წაკითხვა")
-print(read_file('Lesson_12/chess_data/players.json'))
+print(read_file('[12] Lesson_12/chess_data/players.json'))
