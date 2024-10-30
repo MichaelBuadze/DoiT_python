@@ -169,7 +169,7 @@ def update_student_mark(file_name, student_id, subject_name, new_mark):
 
 
 # csv ფაილის სახელი
-file_name = 'Lesson_13/students.csv'
+file_name = '[13] Lesson_13/students.csv'
 
 # სტუდენტის დამატება
 choice = ""
