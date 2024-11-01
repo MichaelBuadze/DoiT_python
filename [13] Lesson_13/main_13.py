@@ -18,12 +18,8 @@ import os
 # CSV დიალექტის რეგისტრაცია
 csv.register_dialect('dialect', delimiter='|', quoting=csv.QUOTE_NONNUMERIC)
 
-your_file_name = input ("\nშეიყვანეთ მონაცემთა ბაზის სახელი: ")
-your_file_name = your_file_name + ".csv"
-print(f"\nგილოცავთ! თქვენ შექმენით ფაილი {your_file_name}!\n")
-
 # csv ფაილის სახელი და გზა იგივე ფოლდერში
-file_name = os.path.join(os.path.dirname(__file__), your_file_name)
+file_name = os.path.join(os.path.dirname(__file__), 'students.csv')
 
 # ფუნქცია, რომელიც ამოწმებს ფაილის არსებობას და სათაურს ამატებს თუ არ არსებობს
 def initialize_file(file_name):
