@@ -50,6 +50,7 @@ else:
 
     # სტუდენტის ქულის განახლება
     renew_student_id = input("\nშეიყვანეთ გასაახლებელი სტუდენტის ID: ")
+    print() # თავისუფალი სივრცე
     renew_student_subject = input("\nშეიყვანეთ გასაახლებელი სტუდენტის საგანი: ")
     print() # თავისუფალი სივრცე
     update_student_mark(file_name, student_id=renew_student_id, subject_name=renew_student_subject, new_mark=85.5)
