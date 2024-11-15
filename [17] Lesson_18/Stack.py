@@ -1,11 +1,16 @@
 class Stack:
     def __init__(self):
+        # "stack" წარმოადგენს ცარიელ სიას ელემენტების შესანახად
         self.stack = []
 
-    #TODO Use list append method to add element
     def push(self, data):
-       pass
+        # ელემენტის დამატება stack-ში გამოყენებით list-ის append მეთოდის
+        self.stack.append(data)
 
-    #TODO Use list pop method to remove element
     def pop(self):
-        pass
+        # ელემენტის ამოღება stack-იდან გამოყენებით list-ის pop მეთოდის
+        if self.stack:
+            return self.stack.pop()
+        else:
+            print("Stack ცარიელია")
+            return None
