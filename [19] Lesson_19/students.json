@@ -1,0 +1,72 @@
+[
+  {
+    "row_id": 1,
+    "name": "Paata",
+    "mark": 87,
+    "address": {
+      "city": "Tbilisi",
+      "street": "Saburtalo"
+    },
+    "grade": "B"
+  },
+  {
+    "row_id": 2,
+    "name": "Demetre",
+    "mark": 100,
+    "address": {
+      "city": "Tbilisi",
+      "street": "Gldani-7-11-4-93"
+    },
+    "grade": "A"
+  },
+  {
+    "row_id": 3,
+    "name": "Alexander",
+    "mark": 100,
+    "address": {
+      "city": "Tbilisi",
+      "street": "Gldani-7-11-4-93"
+    },
+    "grade": "A"
+  },
+  {
+    "row_id": 4,
+    "name": "Teona",
+    "mark": 92,
+    "address": {
+      "city": "Tbilisi",
+      "street": "Gldani-7-11-4-93"
+    },
+    "grade": "A"
+  },
+  {
+    "row_id": 5,
+    "name": "Nino",
+    "mark": 99,
+    "address": {
+      "city": "Tbilisi",
+      "street": "Leselidzs str. 25"
+    },
+    "grade": "A"
+  },
+  {
+    "row_id": 6,
+    "name": "Andria",
+    "mark": 87,
+    "address": {
+      "city": "Tbilisi",
+      "street": "Varketili IV 407-5-123"
+    },
+    "grade": "B"
+  },
+  {
+    "row_id": 7,
+    "name": "გრიგოლი",
+    "mark": 57,
+    "address": {
+      "city": "ახმეტა",
+      "street": "ლეონიძის ქ."
+    },
+    "grade": "D"
+  }
+]
