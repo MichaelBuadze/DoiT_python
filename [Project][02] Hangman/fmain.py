@@ -2,7 +2,7 @@ import random
 from hangman_art import stages, logo
 from hangman_words import word_list
 
-# თამაშის დაწყება და ბანერის ჩვენება
+# ფუნქციის მიზანია ბანერის ჩვენება და თამაშის დაწყება;
 def start_game():
     print(logo)
     print("\nკეთილი იყოს თქვენი მობრძანება Hangman-ის თამაშში!")

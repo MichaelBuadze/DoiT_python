@@ -8,7 +8,7 @@ from fmain import (
     update_display,
 )
 
-def play_game():
+def play_game(): # თამაშის სრული განსაზღვრა საბოლოო ფუნქციაში
     start_game()
 
     chosen_word, quest = choose_word()
@@ -20,14 +20,14 @@ def play_game():
     game_is_finished = False
 
     while not game_is_finished:
+
+        print(f"{' '.join(display)}")
         guess = get_valid_guess(valid_simbols)
 
         if guess in display:
             print(f"\nშენ უკვე გამოიცანი ეს სიმბოლო - {guess}")
         else:
             update_display(chosen_word, display, guess)
-
-        print(f"{' '.join(display)}")
 
         if guess not in chosen_word:
             print(f"\n {guess}, სხვაგან ხარ, ერთი შანსით ნაკლები გაქვს ;).")
@@ -45,4 +45,4 @@ def play_game():
 
 # თამაშის გაშვება
 # if __name__ == "__main__":  შესაძლებელია მომავალი განვითარებისთვის გახდეს საჭირო. 
-play_game()
+play_game() # შესაძლებელია თამაში ჩაჯდეს while ციკლში და მომხმარებელს შესთავაზოთ თამაში თავიდან, ან დახურვა. 
