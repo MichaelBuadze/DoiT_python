@@ -1,3 +1,4 @@
+import os
 import json
 
 # წიგნის კლასი: ინახავს ინფორმაციას ერთი წიგნის შესახებ
@@ -14,7 +15,7 @@ class Book: # იწყება ობიექტის შექმნა
 
 class BookManager: # მართავს წიგნების სიას და ურთიერთქმედებს JSON ფაილთან
     def __init__(self, filename='books.json'):
-        self.filename = filename  # ფაილის სახელი, სადაც შეინახება მონაცემები
+        self.filename = os.path.join(os.path.dirname(__file__), filename)  # ფაილის სრული მისამართი, სადაც შეინახება მონაცემები, კონკრეტული ხერხისთვის მადლობა Google-ს :)
         self.books = []  # ცარიელი სია წიგნებისთვის
         self.load_from_json()  # ტვირთავს წიგნებს ფაილიდან, თუ არსებობს
     
