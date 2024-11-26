@@ -115,10 +115,15 @@ class StudentManagementSystem:
         while True:
             print("\nსტუდენტების მართვის სისტემის მენიუ:\n")
             print("1. ყველა სტუდენტის ნახვა")
+            print("-" * 30)
             print("2. ახალი სტუდენტის დამატება")
+            print("-" * 30)
             print("3. სტუდენტის ძებნა ID-ით")
+            print("-" * 30)
             print("4. სტუდენტის შეფასების განახლება")
+            print("-" * 30)
             print("5. სტუდენტის წაშლა ID-ით")
+            print("-" * 30)
             print("6. გასვლა\n")
 
             choice = input("აირჩიეთ მოქმედება: ")
@@ -169,5 +174,8 @@ class StudentManagementSystem:
 
 
 if __name__ == "__main__":
+    print("="*75)
+    print("ს ტ უ დ ე ნ ტ ე ბ ი ს   მ ა რ თ ვ ი ს   ს ი ს ტ ე მ ა")
+    print("="*75)
     sms = StudentManagementSystem()
     sms.run()
