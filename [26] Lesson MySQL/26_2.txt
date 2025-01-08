@@ -1,0 +1,105 @@
+-- Active: 1736342355345@@127.0.0.1@3306@lesson26
+
+
+DROP Table if EXISTS employees;
+
+CREATE Table departaments(
+    departamentID int PRIMARY KEY AUTO_INCREMENT,
+    departamentName VARCHAR(100) NOT NULL
+)
+;
+
+CREATE Table employees(
+    employeeID int PRIMARY KEY AUTO_INCREMENT,
+    firstName VARCHAR(50) NOT NULL,
+    lastName VARCHAR(50)  NOT NULL,
+    age INT,
+    departamentID INT,
+    Foreign Key (departamentID) REFERENCES departaments(departamentID)
+)
+;
+
+INSERT INTO departaments(`departamentName`)
+VALUES("HR"), ("Engineering"), ("Marketing");
+
+INSERT INTO employees(`firstName`, `lastName`, age, `departamentID`)
+VALUES
+("John", "Doe", 25, 3),
+("test1", "test1", 22, 1),
+("test2", "test2", 33, 2),
+("test3","test3", 26, 1)
+;
+
+SELECT * FROM employees
+JOIN departaments ON departaments.`departamentID` = employees.`departamentID`
+;
+
+
+SELECT `firstName`, `lastName`, `departamentName` 
+FROM employees
+JOIN departaments ON departaments.`departamentID` = employees.`departamentID`
+;
+
+
+CREATE Table customers(
+    customerID INT PRIMARY KEY AUTO_INCREMENT,
+    customerName VARCHAR(50) NOT NULL,
+    customerAge INT
+);
+
+INSERT INTO customers(`customerName`,`customerAge`)
+VALUES
+("David", 23),
+("Anri", 20)
+;
+
+CREATE Table employees2(
+    employeeID int PRIMARY KEY AUTO_INCREMENT,
+    firstName VARCHAR(50) NOT NULL,
+    lastName VARCHAR(50)  NOT NULL,
+    age INT,
+    departamentID INT,
+    customerID INT,
+    Foreign Key (departamentID) REFERENCES departaments(departamentID),
+    Foreign Key (customerID) REFERENCES customers(customerID)
+)
+;
+
+INSERT INTO employees2(`firstName`, `lastName`, age, `departamentID`, `customerID`)
+VALUES
+("John", "Doe", 25, 3, 2),
+("test1", "test1", 22, 1, 1),
+("test2", "test2", 33, 2, 1),
+("test3","test3", 26, 1, 1)
+;
+
+SELECT `firstName`, `lastName`, `departamentName`, `customerName` 
+FROM employees2
+JOIN departaments ON departaments.`departamentID` = employees2.`departamentID`
+JOIN customers ON customers.`customerID` = employees2.`customerID`
+;
+
+
+
+SELECT `firstName`, `lastName`, `departamentName`, `customerName` 
+FROM employees2
+JOIN departaments ON departaments.`departamentID` = employees2.`departamentID`
+JOIN customers ON customers.`customerID` = employees2.`customerID`
+WHERE `customerName` = "Anri"
+;
+
+
+SELECT ROUND(AVG(age),2) AS `Employees average age`,
+ROUND(AVG(`customerAge`),2) AS `Customers average age`
+FROM employees2
+JOIN customers ON customers.`customerID` = employees2.`customerID`
+;
+
+
+
+
+SELECT ROUND(AVG(age),2) AS `Employees average age`,
+ROUND(AVG(DISTINCT `customerAge`),2) AS `Customers average age`
+FROM employees2
+JOIN customers ON customers.`customerID` = employees2.`customerID`
+;

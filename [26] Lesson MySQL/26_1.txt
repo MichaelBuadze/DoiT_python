@@ -1,0 +1,53 @@
+-- Active: 1736342355345@@127.0.0.1@3306@lesson26
+
+DROP DATABASE IF EXISTS lesson26;
+
+create database if not exists lesson26;
+
+SHOW TABLES;
+
+CREATE TABLE employees(
+    employeeID INT PRIMARY KEY AUTO_INCREMENT,
+    firstName VARCHAR(50),
+    lastName VARCHAR(50),
+    age INT
+);
+
+INSERT INTO employees(`firstName`, `lastName`, age)
+VALUES("dato","gabunia",26);
+
+
+SELECT * FROM employees;
+
+INSERT INTO employees(`firstName`, `lastName`, age)
+VALUES
+("john", "Doe", 22),
+("Arman","Madoyan", 25),
+("Gio", "Mado", 22)
+;
+
+
+UPDATE employees
+SET age = 45
+-- WHERE `employeeID` = 1
+-- WHERE `firstName` = "Arman"
+WHERE `firstName` = "john" AND `lastName` = "Doe"
+;
+
+UPDATE employees
+SET age = age + 1
+WHERE `firstName` = "Gio" AND `lastName` = "Mado"
+;
+
+DELETE FROM employees;
+
+TRUNCATE Table employees;
+
+
+SELECT * FROM employees
+WHERE `employeeID` = 2
+;
+
+DELETE FROM employees
+WHERE `employeeID` = 2
+;
