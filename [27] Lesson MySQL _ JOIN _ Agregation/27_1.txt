@@ -1,0 +1,114 @@
+-- Active: 1736342355345@@127.0.0.1@3306@it_step
+
+SELECT * 
+FROM orderdetails
+WHERE `quantityOrdered` > 30
+;
+
+SELECT COUNT(*)
+FROM orderdetails
+WHERE `quantityOrdered` > 30
+;
+
+SELECT ROUND(AVG(`priceEach`),2) AS `average price`
+FROM orderdetails
+;
+
+SELECT ROUND(MIN(`priceEach`),2) AS `min price`
+FROM orderdetails
+;
+
+SELECT ROUND(MAX(`priceEach`),2) AS `max price`
+FROM orderdetails
+;
+
+
+SELECT ROUND(SUM(`priceEach`),2) AS `sum price`
+FROM orderdetails
+;
+
+SELECT ROUND(MIN(`priceEach`),2) AS `min price`,
+ROUND(MAX(`priceEach`),2) AS `max price`,
+ROUND(SUM(`priceEach`),2) AS `sum price`,
+ROUND(AVG(`priceEach`),2) AS `avg price`
+FROM orderdetails
+;
+
+SELECT COUNT(*) 
+FROM customers
+;
+
+SELECT COUNT(city) AS `costumers in NYC`
+FROM customers
+WHERE city = "NYC"
+;
+
+SELECT COUNT(city) AS `costumers in NYC`
+FROM customers
+-- WHERE city != "NYC"
+-- WHERE city <> "NYC"
+WHERE NOT city = "NYC"
+;
+
+
+SELECT COUNT(city) AS `costumers in NYC`
+FROM customers
+-- WHERE city = "NYC" OR city = "Madrid"
+WHERE city IN ("NYC", "Madrid", "Milan", "Tbilisi")
+;
+
+
+CREATE TABLE IF NOT EXISTS students (
+ id INT PRIMARY KEY AUTO_INCREMENT,
+ name VARCHAR(50) NOT NULL,
+ age INT CHECK(age >= 18),
+ grade VARCHAR(10) NOT NULL,
+ mark INT NOT NULL CHECK(mark > 0)
+);
+ 
+ 
+INSERT INTO students (name, age, grade, mark)
+VALUES
+("Alice", 20, "Grade1", 85),
+("Bob", 21, "Grade1", 65),
+("Charlie", 19, "Grade2", 75),
+("David", 21, "Grade2", 90)
+;
+
+SELECT grade 
+FROM students
+GROUP BY grade
+;
+
+
+SELECT grade, COUNT(*) 
+FROM students
+GROUP BY grade
+;
+
+
+SELECT grade, ROUND(AVG(mark),2) AS `average mark`
+FROM students
+GROUP BY grade
+;
+
+SELECT city, ROUND(AVG(`creditLimit`),2) AS `average credit limit`
+FROM customers
+WHERE `creditLimit` > 100000
+GROUP BY city
+;
+
+SELECT city, ROUND(AVG(`creditLimit`),2) AS `average credit limit`
+FROM customers
+GROUP BY city
+HAVING `average credit limit` > 100000
+;
+
+
+
+
+
+SELECT city, `creditLimit`
+FROM customers
+WHERE city = "Madrid"
+;
