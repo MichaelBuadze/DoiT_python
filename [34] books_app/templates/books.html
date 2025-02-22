@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ბიბლიოთეკა</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>ბიბლიოთეკა</h1>
+        <div id="message"></div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>დასახელება</th>
+                    <th>ავტორი</th>
+                    <th>წელი</th>
+                    <th>მოქმედება</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td>{{ book.id }}</td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.year }}</td>
+                    <td>
+                        <a href="{{ url_for('update_book', book_id=book.id) }}" class="edit-btn">ჩასწორება</a>
+                        <!-- <button onclick="deleteBook({{ book.id }})" class="delete-btn">წაშლა</button> -->
+                        <button class="delete-btn" data-id="{{ book.id }}">წაშლა</button>
+
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('create_book') }}" class="add-new">დაამატე ახალი წიგნი</a>
+    </div>
+    <!-- <script>
+        function deleteBook(bookId) {
+            fetch(`/delete_book/${bookId}`, { method: 'DELETE' })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    location.reload();
+                });
+        }
+    </script> -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".delete-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                const bookId = this.getAttribute("data-id");
+                deleteBook(bookId);
+            });
+        });
+    });
+    
+    function deleteBook(bookId) {
+        if (confirm("დარწმუნებული ხარ, რომ გინდა წაშლა?")) {
+            fetch(`/delete_book/${bookId}`, { method: "DELETE" })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    location.reload();
+                })
+                .catch(error => console.error("შეცდომა:", error));
+        }
+    }
+    </script>
+</body>
+</html>
