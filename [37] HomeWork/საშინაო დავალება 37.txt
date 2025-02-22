@@ -1,0 +1,29 @@
+﻿1. შექმენით ჯანგოს პროექტი library.
+
+2. გააკეთეთ ჯანგოს აპლიკაცია სახელად books
+
+3. დაარეგისტრირეთ აპლიკაცია ჯანგოსთვის settings-ებში
+
+4. შექმენით book ცხრილი და გაუშვით მიგრაციის ბრძანებები რომ მოხდეს ცხრილის შექმნა
+
+5. view ფაილში შექმენით 4 ენდპოინტი (ფუნქცია) CRUD ბრძანებებისთვის (სადაც შესაძლებელი იქნება წიგნების დამატება, წაკითხვა, რედაქტირება და წაშლა)
+
+
+შექმენით შემდეგი როუტები:
+
+urlpatterns = [
+    path('books/', views.list_books, name='list_books'),
+    path('books/create/', views.create_book, name='create_book'),
+    path('books/<int:book_id>/', views.book_detail, name='book_detail'),
+    path('books/<int:book_id>/edit/', views.update_book, name='update_book'),
+    path('books/<int:book_id>/delete/', views.delete_book, name='delete_book'),
+]
+
+
+ცხრილის სტრუქტურა:
+
+Book:
+    title 
+    authors
+    publication_date
+    isbn

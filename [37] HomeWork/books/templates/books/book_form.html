@@ -1,0 +1,11 @@
+{% extends 'books/base.html' %}
+
+{% block content %}
+    <h2>{% if form.instance.id %}Edit Book{% else %}Add New Book{% endif %}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'list_books' %}">Cancel</a>
+{% endblock %}

@@ -1,0 +1,169 @@
+/* Body styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9; /* მსუბუქი ფერი ფონზე */
+    color: #333; /* მოყვითალო-მუქი ფერი ტექსტისთვის */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    background-color: #4CAF50; /* მსუბუქი მწვანე ფონური */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+/* Navigation styles */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: 30px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #FF5722; /* ნარინჯისფერი ხაზგასმა */
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: 30px auto;
+}
+
+/* Book box layout */
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.book-box {
+    background-color: #ffffff; /* თეთრი ფონზე */
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    width: 30%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-box:hover {
+    transform: translateY(-5px); /* ბოქსის აწევა */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.book-box h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.book-box p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.book-box a {
+    text-decoration: none;
+    color: #FF5722;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.book-box a:hover {
+    color: #D32F2F; /* უფრო მუქი ნარინჯისფერი */
+}
+
+/* Book details page */
+.book-details {
+    margin: 20px 0;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.book-details h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+.book-details p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Form styles */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+form a {
+    color: #FF5722;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+form a:hover {
+    color: #D32F2F;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    font-size: 16px;
+    margin: 0;
+}

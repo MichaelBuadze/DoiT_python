@@ -1,0 +1,1 @@
+Here is main Django VENV!
