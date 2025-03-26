@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{%block title%} ToDo List {%  endblock %}
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+    <p>{{ request.user }} | <a href="{% url 'logout' %}">გამოსვლა</a></p>
+    {% else %}
+    <p><a href="{% url 'login' %}">შესვლა</a></p>
+    {% endif %}
+
+<hr>
+
+<h1>დავალებათა რეესტრი</h1>
+<p class="center-link"><a href="{% url 'task_create' %}">ახალი დავალება</a></p>
+
+<table>
+    <tr>
+        <th>დავალება</th>
+        <th>მოქმედება</th>
+    </tr>
+{% for task in tasks %}
+    <tr>
+        <td>{{ task }}</td>
+        <td>
+            <a href="{% url 'task' task.pk %}" class="view-link">დეტალები</a>
+            <a href="{% url 'task_update' task.pk %}">განახლება</a>
+            <a href="{% url 'task_delete' task.pk %}">წაშლა</a>
+        </td>
+    </tr>
+{% empty %}
+    <tr>
+        <td><strong>ჯერ დავალება არ არის გაცემული ...</strong></td>
+    </tr>
+{% endfor %}
+</table>
+
+{% endblock %}

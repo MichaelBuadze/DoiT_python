@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block title %}Tasks{% endblock %}
+
+{% block content %}
+<p class="center-link"><a href="{% url 'tasks' %}">თავფურცელი</a></p>
+<div class="task-detail">
+    <h1>დავალება: {{ task }}</h1>
+    <p><strong>მომხმარებელი:</strong> {{ task.user }}</p>
+    <p><strong>განმარტება:</strong> {{ task.description }}</p>
+    <p><strong>შესრულება:</strong> {{ task.complete }}</p>
+    <p><strong>შექმნილია:</strong> {{ task.created }}</p>
+</div>
+{% endblock %}

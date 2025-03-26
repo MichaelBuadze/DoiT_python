@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{%block title%} ToDo List {%  endblock %}
+
+{% block content %}
+    
+<h1>დავალებათა რეესტრი</h1>
+<p class="center-link"><a href="{% url 'task_create' %}">ახალი დავალება</a></p>
+
+<table>
+    <tr>
+        <th>დავალება</th>
+        <th>მოქმედება</th>
+    </tr>
+{% for task in tasks %}
+    <tr>
+        <td>{{ task }}</td>
+        <td>
+            <a href="{% url 'task' task.pk %}" class="view-link">დეტალები</a>
+            <a href="{% url 'task_update' task.pk %}">განახლება</a>
+            <a href="{% url 'task_delete' task.pk %}">წაშლა</a>
+        </td>
+    </tr>
+{% endfor %}
+</table>
+
+{% endblock %}

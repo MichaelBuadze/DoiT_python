@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %} To Do List {% endblock %}
+
+{% block content %}
+  {% if request.user.is_authenticated %}
+    <p>{{ request.user }}</p>
+    <p><a href="{% url 'logout' %}">Logout</a></p>
+  {% else %}
+    <p><a href="{% url 'login' %}">Login</a></p>
+  {% endif %}
+  
+    <hr>
+
+  <h1>My To Do List</h1>
+
+  <p><a href="{% url 'task_create' %}">Add New Task</a></p>
+
+  <table>
+    <tr>
+      <th>Tasks</th>
+    </tr>
+
+    {% for task in tasks %}
+      <tr>
+        <td>{{ task }}</td>
+        <td><a href="{% url 'task' task.pk %}">View</a></td>
+        <td><a href="{% url 'task_update' task.pk %}">Update</a></td>
+        <td><a href="{% url 'task_delete' task.pk %}">Delete</a></td>
+      </tr>
+    {% empty %}
+      <tr>
+        <td><strong>You have no task yet...</strong></td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

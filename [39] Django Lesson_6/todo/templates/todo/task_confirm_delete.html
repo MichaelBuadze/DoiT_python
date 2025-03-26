@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block title %}Confirm Delete{% endblock %}
+
+{% block content %}
+<p class="center-link"><a href="{% url 'tasks' %}">თავფურცელი</a></p>
+<div class="confirm-delete">
+    <h1>წავშალო "{{ object }}"?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">დიახ, წაშალე!</button>
+    </form>
+</div>
+{% endblock %}

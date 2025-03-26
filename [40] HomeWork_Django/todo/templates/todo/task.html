@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Task Detail {% endblock %}
+
+{% block content %}
+  <h1>Task: {{ task }}</h1>
+  <p>User: {{ task.user }}</p>
+  <p>Description: {{ task.description }}</p>
+  <p>Complete: {{ task.complete }}</p>
+  <p>Created: {{ task.created }}</p>
+
+  <br>
+  <p><a href="{% url 'tasks' %}">Go Back</a></p>
+{% endblock %}

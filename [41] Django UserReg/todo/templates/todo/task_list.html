@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{%block title%} ToDo List {%  endblock %}
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+    <p style="text-align: right; margin-bottom: 0;">გამარჯობა, {{ request.user }} | <a href="{% url 'logout' %}">გამოსვლა</a></p>
+    <p style="text-align: right; font-size: small; margin-top: 0; padding-right: 6rem;"> <i>შენ გაქვს {{ count }} შეუსრულებელი დავალება</i> </p>
+    {% else %}
+    <p><a href="{% url 'login' %}">შესვლა</a></p>
+    {% endif %}
+
+<hr>
+
+<h1>დავალებათა რეესტრი</h1>
+<p class="center-link"><a href="{% url 'task_create' %}">ახალი დავალება</a></p>
+<form action="" method="get">
+    <input type="text" name="search_area" style="width: 388px;"  value="{{search_input}}">
+    <button type="submit" >
+        ძიება
+    </button>
+</form>
+<table>
+    <tr>
+        <th>დავალება</th>
+        <th>მოქმედება</th>
+    </tr>
+{% for task in tasks %}
+    <tr>
+        <td> 
+            {%  if task.complete %}
+           <a class="view-link"></a> <a href="{% url 'task' task.pk %}">{{ task }}</a>
+            {%  else %}
+            <a class="view-linkn"></a><a href="{% url 'task' task.pk %}">{{ task }}</a>
+            {% endif %}
+        </td>
+        <td>
+            <a href="{% url 'task_update' task.pk %}">განახლება</a>
+            <a href="{% url 'task_delete' task.pk %}">&#215</a>
+       
+        </td>
+
+    </tr>
+{% empty %}
+    <tr>
+        <td><strong>ჯერ დავალება არ არის გაცემული ...</strong></td>
+    </tr>
+{% endfor %}
+</table>
+
+{% endblock %}

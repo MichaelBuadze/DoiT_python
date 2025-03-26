@@ -1,0 +1,207 @@
+@font-face {
+    font-family: 'BPG Extra Square Mtavruli';
+    src: url("../fonts/BPGExtraSquareMtavruli.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BPG Extra Square';
+    src: url("../fonts/bpg_extrasquare.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ზოგადი სტილები */
+body {
+    font-family: 'Arial', sans-serif, 'BPG Extra Square';
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1 {
+    font-family: 'BPG Extra Square Mtavruli';
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #3498db;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+/* ცხრილის სტილები (task_list.html) */
+table {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+td, th {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    font-family: 'BPG Extra Square Mtavruli';
+    background-color: #3498db;
+    color: #fff;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* ღილაკების/ლინკების სტილები ცხრილში */
+td a {
+    font-family: 'BPG Extra Square';
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+td a.view-link {
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+td a.view-linkn {
+    background-color: #eeeb4a;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 25%;
+    margin-right: 5px;
+}
+
+td a[href*="update"] {
+    background-color: #f39c12;
+    color: #fff;
+}
+
+td a[href*="delete"] {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+
+td a:hover {
+    opacity: 0.9;
+}
+
+/* ფორმის სტილები (task_form.html) */
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form p {
+    margin: 10px 0;
+    text-decoration: none;
+    font-family: 'BPG Extra Square Mtavruli';
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form button {
+    font-family: 'BPG Extra Square Mtavruli';
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #2980b9;
+}
+
+/* Task დეტალების გვერდი (task.html) */
+.task-detail {
+    font-family: 'BPG Extra Square';
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-detail p {
+    margin: 10px 0;
+}
+
+/* Delete დასტურის გვერდი (task_confirm_delete.html) */
+.confirm-delete {
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.confirm-delete button {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.confirm-delete button:hover {
+    background-color: #c0392b;
+}
+
+/* Add New Task და Go Back ცენტრში განთავსება */
+.center-link {
+    font-family: 'BPG Extra Square Mtavruli';
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* არჩევითი: Hover ეფექტი */
+.center-link a:hover {
+    color: #2980b9;
+}

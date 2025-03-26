@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{%block title%} Create New / Update {%  endblock %}
+
+{% block content %}
+<p class="center-link"><a href="{% url 'tasks' %}">თავფურცელი</a></p>
+<h1>ახალი დავალება</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">ასახვა</button>
+
+
+</form>
+
+
+{% endblock %}
