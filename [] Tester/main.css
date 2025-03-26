@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'BPG Extra Square Mtavruli';
+    src: url("fonts/BPGExtraSquareMtavruli.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BPG Extra Square';
+    src: url("fonts/bpg_extrasquare.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* ნაგულისხმევი სტილების გასუფთავება */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* სხეულის სტილები */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* ჰედერის სტილები */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 1.5rem 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 45%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ნავიგაციის სტილები */
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    margin-right: 1.5rem;
+}
+
+.nav-list a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: #ff6347;
+}
+
+/* შესვლის ფორმის სტილები */
+.login-form {
+    font-family: 'BPG Extra Square';
+    display: flex;
+    gap: 0.5rem;
+}
+
+.login-form input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 150px;
+}
+
+.login-form button {
+    padding: 0.5rem 1rem;
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #e5533d;
+}
+
+/* რეგისტრაციის ბმულის სტილები */
+.login-form a.register-link {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: #3a8ccf;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form a.register-link:hover {
+    background-color: #ffd447;
+}
+
+/* მთავარი შინაარსის სტილები */
+.main-content {
+    margin-top: 6rem; /* ფიქსირებული ჰედერის გათვალისწინება */
+    padding: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-content h1 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.main-content p {
+    color: #666;
+}
+
+/* ფუტერის სტილები */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}

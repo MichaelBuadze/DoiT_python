@@ -1,0 +1,60 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%} {%  endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="{% static 'mainn.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <nav class="nav">
+                <ul class="nav-list">
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'dish_list' %}">კერძების სარჩევი</a></li>
+                    <li><a href="{% url 'cart' %}">კალათა</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+            <div class="auth">
+                {% if user.is_authenticated %}
+               
+                <form class="login-form" method="post" action="{% url 'logout' %}" > 
+                    
+                    {% csrf_token %}
+                    <button type="submit">გასვლა</button>
+                </form>
+                {% else %}
+                <form class="login-form" method="post" action="{% url 'login' %}" >
+                    {% csrf_token %}
+                    <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username" placeholder="მომხმარებელი">
+                    <input type="password" name="password" autocomplete="current-password" required id="id_password" placeholder="პაროლი">
+                    <button type="submit">შესვლა</button> 
+                    <a href="{% url 'register' %}"   class="register-link">რეგისტრაცია</a>   
+                </form>
+                    
+                {% endif %}
+            </div>
+        </div>
+    </header>
+    <main class="main-content">
+        {% if user.is_authenticated %}
+        <span class="welcome">გამარჯობა, {{ user.username }}!</span>
+        {% endif %}
+        <h1>კეთილი იყოს თქვენი მობრძანება</h1>
+        <p>ვებ გვერდი მუშაობს საცდელ რეჟიმში</p>
+
+        {% block content %}
+    
+        {% endblock %}
+      
+    </main>
+    <footer class="footer">
+        <p>© 2025 თქვენი კომპანია. ყველა უფლება დაცულია.</p>
+    </footer>
+</body>
+</html>

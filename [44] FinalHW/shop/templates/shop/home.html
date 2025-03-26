@@ -1,0 +1,34 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>My Shop</title>
+</head>
+<body>
+    <h1>ათასი წვრილმანი</h1>
+    <p>აქ იპოვნი, სასურველს</p>
+
+    {% for product in products %}
+    <div class="product-card">
+        <img src="{{ product.image_url }}" alt="{{ product.name }}" width="200px">
+        <h3>{{ product.name }}</h3>
+        <p>ფასი: {{ product.price }}₾</p>
+        <p>რეიტინგი: {{ product.rating }}</p>
+
+        <form method="POST" action="{% url 'add_to_cart' product.id %}">
+            {% csrf_token %}
+            <button type="submit">კალათაში დამატება</button>
+        </form>
+    </div>
+{% endfor %}
+
+    
+</body>
+</html>
+
+
+
+

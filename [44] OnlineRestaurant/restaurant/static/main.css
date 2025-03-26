@@ -1,0 +1,220 @@
+@font-face {
+    font-family: 'BPG Extra Square Mtavruli';
+    src: url("fonts/BPGExtraSquareMtavruli.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BPG Extra Square';
+    src: url("fonts/bpg_extrasquare.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* ნაგულისხმევი სტილების გასუფთავება */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* სხეულის სტილები */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    /* background-color: #f4f4f4; */
+    background-color: #121212; 
+}
+
+/* ჰედერის სტილები */
+.header {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 1.5rem 0;
+    z-index: 1000;
+
+}
+
+.header-container {
+    max-width: 1200px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ნავიგაციის სტილები */
+.nav-list {
+    font-family: 'BPG Extra Square Mtavruli';
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    margin-right: 1.5rem;
+}
+
+.nav-list a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: #ffd447;
+}
+
+/* შესვლის ფორმის სტილები */
+.login-form {
+    font-family: 'BPG Extra Square';
+    display: flex;
+    gap: 0.5rem;
+}
+
+.login-form input {
+    font-family: 'BPG Extra Square';
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 150px;
+}
+
+.login-form button {
+    font-family: 'BPG Extra Square';
+    padding: 0.5rem 1rem;
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #e5533d;
+}
+
+/* რეგისტრაციის ბმულის სტილები */
+.auth a.register-link {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: #3a8ccf;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth a.register-link:hover {
+    background-color: #ffd447;
+}
+
+.welcome {
+    font-family: 'BPG Extra Square';
+    color: #333;
+}
+
+/* მთავარი შინაარსის სტილები */
+.main-content {
+    margin-top: 6rem; /* ფიქსირებული ჰედერის გათვალისწინება */
+    padding: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-content h1 {
+    font-family: 'BPG Extra Square Mtavruli';
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.main-content p {
+    font-family: 'BPG Extra Square';
+    color: #666;
+}
+
+/* ფუტერის სტილები */
+.footer {
+    font-family: 'BPG Extra Square';
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/*კერძის ქარდის აღნაგობა*/
+
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.dish-card {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 350px; 
+    margin: 0 auto; 
+}
+
+.dish-card img {
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.dish-info {
+    padding: 20px;
+}
+
+.dish-info h5 {
+    font-size: large;
+    font-family: 'BPG Extra Square Mtavruli';
+    margin: 0 0 10px;
+    color: #ffd447;
+}
+
+.dish-info p {
+    margin: 5px 0;
+}
+
+.price {
+    font-weight: bold;
+    color: #00c853;
+}
+
+.dish-card a.add_to_cart {
+
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: #3a8ccf;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'BPG Extra Square';
+
+}
+
+.dish-card a.add_to_cart:hover {
+    background-color: #ffd447;
+}

@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{%block title%} Dishes {%  endblock %}
+
+{% block content %}
+
+
+        <form method="get" class="filter-form">
+            <select name="category">
+                <option value="">ყველა კატეგორია</option>
+                {% for category in categories %}
+                    <option value="{{ category.name }}" {% if request.GET.category == category.name %}selected{% endif %}>{{ category.name }}</option>
+                {% endfor %}
+            </select>
+            <input type="number" name="spiciness" placeholder="სიცხარე" value="{{ request.GET.spiciness }}">
+            <label><input type="checkbox" name="has_nuts" {% if request.GET.has_nuts == 'on' %}checked{% endif %}> ნიგვზიანი</label>
+            <label><input type="checkbox" name="is_vegetarian" {% if request.GET.is_vegetarian == 'on' %}checked{% endif %}> ვეგეტარიანული</label>
+            <button type="submit" class="btn btn-primary">ფილტრი</button>
+        </form>
+
+        <div class="dishes-grid">
+            {% for dish in dishes %}
+                <div class="dish-card">
+                    <img src="{{ dish.image.url }}" alt="{{ dish.name }}">
+                    <div class="dish-info">
+                        <h5>{{ dish.name }}</h5>
+                        <p>სიცხარე: {{ dish.spiciness }}</p>
+                        <p>ნიგვზიანი: {% if dish.has_nuts %}კი{% else %}არა{% endif %}</p>
+                        <p>ვეგეტარიანული: {% if dish.is_vegetarian %}კი{% else %}არა{% endif %}</p>
+                        <p class="price">ფასი: {{ dish.price }}</p>
+                        <br>
+                        {% if user.is_authenticated %}
+                       <p><a href="{% url 'add_to_cart' dish.id %}" class="add_to_cart">კალათაში დამატება</a></p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    
+{% endblock %}

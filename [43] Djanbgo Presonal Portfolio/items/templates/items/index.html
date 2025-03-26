@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Items List{% endblock %}
+
+<div>
+  {% block content %}
+    <h1>Items List</h1>
+
+    {% for item in items %}
+      <h3>{{ item }}</h3>
+      <p>{{ item.description }}</p>
+    {% endfor %}
+
+
+    {% include "items/includes/paginations.html" with items=items %}
+
+  {% endblock %}
+</div>
